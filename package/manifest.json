@@ -1,0 +1,9 @@
+{
+  "name": "AutoTorch",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/DarthJML",
+  "description": "Never refuel a torch again. Torches, sconces, braziers, campfires and hearths top themselves up from fuel in nearby chests. Config: reach, check interval, night-only, keep-in-chest, wood fires on/off.",
+  "dependencies": [
+    "denikson-BepInExPack_Valheim-5.4.2351"
+  ]
+}

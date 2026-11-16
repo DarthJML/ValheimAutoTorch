@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net472</TargetFramework>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>DarthJML.AutoTorch</RootNamespace>
+    <AssemblyName>AutoTorch</AssemblyName>
+    <!-- Point these at your own install: dotnet build -c Release -p:ValheimDir="D:/Games/Valheim" -->
+    <ValheimDir Condition="'$(ValheimDir)' == '' And '$(OS)' == 'Windows_NT'">C:/Program Files (x86)/Steam/steamapps/common/Valheim</ValheimDir>
+    <ValheimDir Condition="'$(ValheimDir)' == ''">/mnt/c/Program Files (x86)/Steam/steamapps/common/Valheim</ValheimDir>
+    <BepInExCore Condition="'$(BepInExCore)' == ''">$(ValheimDir)/BepInEx/core</BepInExCore>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BepInEx"><HintPath>$(BepInExCore)/BepInEx.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="0Harmony"><HintPath>$(BepInExCore)/0Harmony.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine"><HintPath>$(ValheimDir)/valheim_Data/Managed/UnityEngine.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="UnityEngine.CoreModule"><HintPath>$(ValheimDir)/valheim_Data/Managed/UnityEngine.CoreModule.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="assembly_valheim"><HintPath>$(ValheimDir)/valheim_Data/Managed/assembly_valheim.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="assembly_utils"><HintPath>$(ValheimDir)/valheim_Data/Managed/assembly_utils.dll</HintPath><Private>false</Private></Reference>
+    <Reference Include="assembly_guiutils"><HintPath>$(ValheimDir)/valheim_Data/Managed/assembly_guiutils.dll</HintPath><Private>false</Private></Reference>
+  </ItemGroup>
+</Project>
